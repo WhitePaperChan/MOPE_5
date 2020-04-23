@@ -50,25 +50,6 @@ def coeffs_criterias(yi, x, y):
     x0.append([round(x0[1][i] ** 2, 6) for i in range(k)])
     x0.append([round(x0[2][i] ** 2, 6) for i in range(k)])
 
-    # mx = [[] for i in range(len(x) + 1)]
-    # mx[0].append(k)
-    # for i in range(1, len(x0) + 1):
-    #     suma = round(sum(x0[i-1]), 3)
-    #     mx[0].append(suma)
-    #     mx[i].append(suma)
-    #     for j in range(0, len(x0)):
-    #         mx[i].append(round(sum([round(x0[i-1][l] * x0[j][l], 3) for l in range(k)]), 3))
-    # for i in mx:
-    #     print(i)
-    # b0 = [round(sum(yi)/len(yi), 5)]
-    # print("b0" + str(0) + ": " + str(b0[0]))
-    # for i in range(1, len(x0)+1):
-    #    b0.append(round(sum([yi[j] * x0[i-1][j]/len(yi) for j in range(len(yi))]), 5))
-    #    print("b0" + str(i) + ": " + str(b0[i]))
-
-    # test = b0[0] + sum([b0[i+1]*x0[i][0] for i in range(len(x0))])
-    # print(test)
-
     mx0 = [[0 for j in range(len(x0) + 1)] for i in range(len(x0) + 1)]
 
     mx0[0][0] = k
@@ -151,9 +132,6 @@ def coeffs_criterias(yi, x, y):
 
     f4 = k - d
     print("f4: " + str(f4))
-    x = [[-30, -30, 0, 0],
-         [10, 60, 10, 60],
-         [10, 35, 35, 10]]
     yj = []
     for i in range(4):
         yj.append(0)
